@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/d/Ubuntu/CarClient/Test/SubClient.cpp
+stdio.h
+-
+stdlib.h
+-
+mosquitto.h
+-
+string.h
+-
+
