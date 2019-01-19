@@ -1,1 +1,0 @@
-/usr/bin/c++  -pthread -g   CMakeFiles/PubClient.dir/PubClient.cpp.o  -o ../../bin/PubClient /usr/lib/x86_64-linux-gnu/libmosquitto.so 
