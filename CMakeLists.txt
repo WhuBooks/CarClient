@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.9)
 project(CarClient)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 SET(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake_modules)
 
 # output paths settings
@@ -47,9 +47,12 @@ find_package(Mosquitto REQUIRED)
 include_directories(${MOSQUITTO_INCLUDE_DIR})
 link_libraries(${MOSQUITTO_LIBRARY})
 
+find_package(Mosquittopp REQUIRED)
+include_directories(${MOSQUITTOPP_INCLUDE_DIR})
+link_libraries(${MOSQUITTOPP_LIBRARIES})
+
 include_directories(src)
-include_directories(${PROJECT_SOURCE_DIR})
-include_directories(ThirdParty)
+include_directories(3rdParty)
 
 add_subdirectory(src)
 add_subdirectory(app)
@@ -58,5 +61,5 @@ option(UseTest "Compile Test" ON)
 MESSAGE(STATUS "Use Test or not : ${UseTest}")
 
 if(UseTest)
-    add_subdirectory(Test)
+    add_subdirectory(test)
 endif()
